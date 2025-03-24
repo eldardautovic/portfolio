@@ -8,7 +8,7 @@ function Hero() {
                 className="flex flex-col-reverse md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-8">
                 <div className="flex flex-col text-left w-full md:w-1/2">
                     <h1 className="scroll-m-20 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-100 mb-4">
-                        Eldar<span className="text-teal-300"> Dautović</span>
+                        Eldar<span className="text-cyan-400"> Dautović</span>
                     </h1>
                     <h3 className="scroll-m-20 text-xl md:text-2xl font-semibold tracking-tight text-slate-300 mb-3">
                         A Full-stack Web Developer
