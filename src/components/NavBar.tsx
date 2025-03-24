@@ -83,7 +83,7 @@ const NavBar = ({
           </div>
           <div className="flex gap-2">
             <Button asChild size="sm">
-              <a href="mailto:dautoviceldar20@gmail.com">Let's talk</a>
+              <a href="mailto:dautoviceldar20@gmail.com">Let&apos;s talk</a>
             </Button>
           </div>
         </nav>
