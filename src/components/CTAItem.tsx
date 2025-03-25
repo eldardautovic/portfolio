@@ -14,7 +14,7 @@ function CtaItem({item, index}: CtaItemProps) {
         <div
             key={index}
             className={cn(
-                "group relative overflow-hidden rounded-xl bg-cyan-900/50 p-6 transition-all hover:bg-cyan-900/60 duration-500",
+                "group relative overflow-hidden rounded-xl bg-cyan-900/50 p-6 transition-all hover:bg-cyan-900/60 duration-500 h-full",
                 item.className,
             )}
         >
