@@ -36,7 +36,7 @@ export default function RootLayout({
                 className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_60%,black)] dark:bg-black"
             />
 
-            <div className="relative z-20 w-full max-w-6xl mx-auto px-7 py-10">
+            <div className="relative z-20 w-full max-w-5xl mx-auto px-7 py-10">
                 <NavBar/>
                 {children}
             </div>

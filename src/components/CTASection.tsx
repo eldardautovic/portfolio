@@ -4,29 +4,29 @@ import {Code, Github, Palette} from "lucide-react";
 import {BentoGridItemProps} from "@/types/bentoGrid";
 import CTAItem from "@/components/CTAItem";
 
-function CtaSection() {
+const bentoItems: BentoGridItemProps[] = [
+    {
+        title: "Code Wizardry",
+        description: "Turning caffeine into code since 2020. Full-stack developer with a passion for clean architecture.",
+        icon: <Code className="h-6 w-6"/>,
+        className: "md:col-span-1 md:row-span-1",
+    },
+    {
+        title: "Tech Stack Virtuoso",
+        description: "Demonstrating adaptability across diverse tech-stacks.",
+        icon: <Palette className="h-6 w-6"/>,
+        className: "md:col-span-1 md:row-span-1",
+    },
+    {
+        title: "Open Source",
+        description: "Contributing to the community one commit at a time.",
+        icon: <Github className="h-6 w-6"/>,
+        className: "md:col-span-2 md:row-span-1",
+        objectFit: "contain"
+    },
+];
 
-    const bentoItems: BentoGridItemProps[] = [
-        {
-            title: "Code Wizardry",
-            description: "Turning caffeine into code since 2015. Full-stack developer with a passion for clean architecture.",
-            icon: <Code className="h-6 w-6"/>,
-            className: "md:col-span-1 md:row-span-1",
-        },
-        {
-            title: "Tech Stack Virtuoso",
-            description: "Demonstrating adaptability across diverse tech-stacks.",
-            icon: <Palette className="h-6 w-6"/>,
-            className: "md:col-span-1 md:row-span-1",
-        },
-        {
-            title: "Open Source",
-            description: "Contributing to the community one commit at a time.",
-            icon: <Github className="h-6 w-6"/>,
-            className: "md:col-span-2 md:row-span-1",
-            objectFit: "contain"
-        },
-    ];
+function CtaSection() {
 
     return (
         <section className="w-full py-2">
