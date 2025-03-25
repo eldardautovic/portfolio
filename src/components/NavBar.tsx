@@ -59,7 +59,7 @@ const NavBar = ({
                     <div className="flex items-center gap-6">
                         <Link href="#" className="flex items-center gap-2">
                             <Button
-                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-300">
+                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-500">
                                 E
                             </Button>
                         </Link>
@@ -82,7 +82,7 @@ const NavBar = ({
                     <div className="flex items-center justify-between">
                         <a href="#" className="flex items-center gap-2">
                             <Button
-                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-300">
+                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-500">
                                 E
                             </Button>
                         </a>
@@ -97,7 +97,7 @@ const NavBar = ({
                                     <SheetTitle>
                                         <a href="#" className="flex items-center gap-2">
                                             <Button
-                                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-300">
+                                                className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-500">
                                                 E
                                             </Button>
                                         </a>

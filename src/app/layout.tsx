@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import {NavBar} from "@/components/NavBar";
+import {ReactNode} from "react";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -21,13 +22,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
-    children: React.ReactNode;
+    children: ReactNode;
 }>) {
     return (
         <html lang="en" className="dark">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <div className="relative flex h-screen w-full bg-white dark:bg-slate-950">
+        <div className="relative flex min-h-screen w-full bg-white dark:bg-slate-950">
             <div
                 className="absolute inset-0 [background-size:10px_10px] [background-image:linear-gradient(to_right,rgba(147,197,253,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(147,197,253,0.2)_1px,transparent_1px)] dark:[background-image:linear-gradient(to_right,rgba(6,95,70,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(6,95,70,0.2)_1px,transparent_1px)]"
             />

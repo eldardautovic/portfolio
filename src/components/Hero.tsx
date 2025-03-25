@@ -21,9 +21,11 @@ function Hero() {
                     <div className="w-48 md:w-64 lg:w-80 aspect-square relative">
                         <Image
                             src="/assets/hero-image.webp"
-                            alt="Hero image -- Eldar Memoji"
-                            fill
+                            sizes="(max-width: 768px) 256px (max-width: 1024px) 320px"
                             className="rounded-lg"
+                            priority
+                            fill
+                            alt="Hero image - Eldar Memoji"
                         />
                     </div>
                 </div>
