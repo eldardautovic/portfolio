@@ -13,7 +13,7 @@ function Hero() {
                     <h3 className="scroll-m-20 text-xl md:text-2xl font-semibold tracking-tight text-slate-300 mb-3">
                         A Full-stack Web Developer
                     </h3>
-                    <p className="leading-7 text-slate-400">
+                    <p className="leading-7 text-slate-400 text-md md:text-lg ">
                         Transforming ideas into scalable web applications with 4 years of expertise.
                     </p>
                 </div>
@@ -22,8 +22,7 @@ function Hero() {
                         <Image
                             src="/assets/hero-image.webp"
                             alt="Hero image -- Eldar Memoji"
-                            layout="fill"
-                            objectFit="contain"
+                            fill
                             className="rounded-lg"
                         />
                     </div>
