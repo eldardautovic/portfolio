@@ -1,6 +1,7 @@
 import Image from "next/image"
 import {CalendarIcon} from "lucide-react"
 import Link from "next/link";
+import dayjs from "dayjs";
 
 interface BlogPostProps {
     title: string
@@ -38,7 +39,8 @@ export default function BlogPost({
 
             <div className="flex items-center gap-1 text-sm text-gray-400">
                 <CalendarIcon className="h-4 w-4"/>
-                <time dateTime={new Date(publishDate).toISOString()}>{publishDate}</time>
+                <time
+                    dateTime={dayjs(publishDate).format('DD/MM/YYYY')}>{dayjs(publishDate).format('DD.MM.YYYY')}</time>
             </div>
         </div>
     )
