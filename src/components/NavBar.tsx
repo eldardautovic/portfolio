@@ -41,14 +41,13 @@ interface NavBarProps {
 
 const NavBar = ({
                     menu = [
-                        {title: "About", url: "#"},
                         {
                             title: "Projects",
                             url: "#",
                         },
                         {
                             title: "Blog",
-                            url: "#",
+                            url: "/blog",
                         },
                     ],
                 }: NavBarProps) => {
@@ -57,7 +56,7 @@ const NavBar = ({
             <div className="container">
                 <nav className="hidden justify-between lg:flex">
                     <div className="flex items-center gap-6">
-                        <Link href="#" className="flex items-center gap-2">
+                        <Link href="/" className="flex items-center gap-2">
                             <Button
                                 className="text-xl font-black hover:-rotate-12 hover:scale-90 cursor-pointer duration-500">
                                 E
