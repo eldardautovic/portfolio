@@ -8,7 +8,15 @@ import ProjectsList from "@/components/ProjectsList";
 const PROJECT_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]`;
+]|order(_createdAt asc)[0...12]{
+  ...,
+  "categories": categories[]-> {
+    _type,
+    title,
+    "id": _id
+  }
+}`;
+
 
 async function Page() {
     const projects = await client.fetch<Project[]>(PROJECT_QUERY, {}, {next: {revalidate: 30}});

@@ -112,13 +112,14 @@ export type Project = {
         crop?: SanityImageCrop
         _type: 'image'
     }
+    description?: string
     bgColor?: Color
     categories?: Array<{
         _ref: string
         _type: 'reference'
         _weak?: boolean
         _key: string
-        [internalGroqTypeReferenceTo]?: 'category'
+        title: string
     }>
     publishedAt?: string
     body?: Array<
