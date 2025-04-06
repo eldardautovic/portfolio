@@ -43,7 +43,7 @@ const NavBar = ({
                     menu = [
                         {
                             title: "Projects",
-                            url: "#",
+                            url: "/projects",
                         },
                         {
                             title: "Blog",
