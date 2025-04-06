@@ -8,7 +8,7 @@ import ProjectsList from "@/components/ProjectsList";
 const PROJECT_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(_createdAt asc)[0...12]{
+]|order(_createdAt desc)[0...12]{
   ...,
   "categories": categories[]-> {
     _type,
@@ -22,7 +22,7 @@ async function Page() {
     const projects = await client.fetch<Project[]>(PROJECT_QUERY, {}, {next: {revalidate: 30}});
 
     return (
-        <section className="min-h-[80vh] py-12 md:py-16 lg:py-20">
+        <section className="min-h-[80vh] pt-12 md:pt-16 lg:pt-20 pb-5">
             <div className="mb-8 text-slate-100">
                 <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl"><span
                     className="text-cyan-300">My</span> projects</h2>

@@ -17,7 +17,7 @@ const technologies: Technology[] = [
     {id: 4, name: "Node.js", icon: "nodejs", type: "back", className: "bg-green-500/30"},
     {id: 5, name: "C#", icon: "csharp", type: "back", className: "bg-purple-500/20"},
     {id: 7, name: "NextJS", icon: "nexjts", type: "back", className: "bg-gray-100/10"},
-    {id: 8, name: "ASP.NET", icon: "net", type: "back", className: "bg-blue-800/30"},
+    {id: 8, name: "ASP.NET", icon: "dotnet", type: "back", className: "bg-blue-800/30"},
     {id: 9, name: "HTML", icon: "html", type: "front", className: "bg-orange-500/30"},
     {id: 10, name: "CSS", icon: "css", type: "front", className: "bg-blue-400/30"},
     {id: 11, name: "Tailwind CSS", icon: "tailwind", type: "front", className: "bg-teal-500/20"},

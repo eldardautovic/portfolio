@@ -68,6 +68,27 @@ export type Geopoint = {
     alt?: number
 }
 
+export type Technology = {
+    _id: string
+    _type: 'technology'
+    _createdAt: string
+    _updatedAt: string
+    _rev: string
+    title?: string
+    image?: {
+        asset?: {
+            _ref: string
+            _type: 'reference'
+            _weak?: boolean
+            [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+        }
+        media?: unknown
+        hotspot?: SanityImageHotspot
+        crop?: SanityImageCrop
+        _type: 'image'
+    }
+}
+
 export type Project = {
     _id: string
     _type: 'project'
@@ -75,6 +96,7 @@ export type Project = {
     _updatedAt: string
     _rev: string
     title?: string
+    repoUrl?: string
     slug?: Slug
     mainImage?: {
         asset?: {
@@ -115,11 +137,32 @@ export type Project = {
     description?: string
     bgColor?: Color
     categories?: Array<{
+        title: string
         _ref: string
         _type: 'reference'
         _weak?: boolean
         _key: string
+        [internalGroqTypeReferenceTo]?: 'category'
+    }>
+    technologies?: Array<{
         title: string
+        image?: {
+            asset?: {
+                _ref: string
+                _type: 'reference'
+                _weak?: boolean
+                [internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+            }
+            media?: unknown
+            hotspot?: SanityImageHotspot
+            crop?: SanityImageCrop
+            _type: 'image'
+        }
+        _ref: string
+        _type: 'reference'
+        _weak?: boolean
+        _key: string
+        [internalGroqTypeReferenceTo]?: 'technology'
     }>
     publishedAt?: string
     body?: Array<
@@ -380,6 +423,7 @@ export type AllSanitySchemaTypes =
     | SanityImageDimensions
     | SanityFileAsset
     | Geopoint
+    | Technology
     | Project
     | BlockContent
     | Category
