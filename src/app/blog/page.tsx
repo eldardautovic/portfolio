@@ -3,11 +3,17 @@ import BlogSection from "@/components/ui/blog-section";
 import {Post} from "@/sanity/sanity.types";
 import SectionHeader from "@/components/ui/section-header";
 import Link from "next/link";
+import {Metadata} from "next";
 
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
 ]|order(publishedAt desc)[0...12]`;
+
+export const metadata: Metadata = {
+    title: 'Blog',
+    description: 'Just me sharing my take on web development. My blog.',
+}
 
 async function Page() {
     const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, {next: {revalidate: 30}});

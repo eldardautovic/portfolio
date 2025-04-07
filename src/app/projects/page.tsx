@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/section-header";
 import {client} from "@/sanity/client";
 import {Project} from "@/sanity/sanity.types";
 import ProjectsList from "@/components/ProjectsList";
+import {Metadata} from "next";
 
 const PROJECT_QUERY = `*[
   _type == "project"
@@ -17,6 +18,10 @@ const PROJECT_QUERY = `*[
   }
 }`;
 
+export const metadata: Metadata = {
+    title: 'Projects',
+    description: 'A glimpse into what I’ve been working on. My projects',
+}
 
 async function Page() {
     const projects = await client.fetch<Project[]>(PROJECT_QUERY, {}, {next: {revalidate: 30}});

@@ -3,6 +3,7 @@ import type {SanityImageSource} from "@sanity/image-url/lib/types/types";
 import {client} from "@/sanity/client";
 import {Post} from "@/sanity/sanity.types";
 import BlogDetails from "@/components/BlogDetails";
+import {Metadata} from "next";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
@@ -27,6 +28,17 @@ export async function generateStaticParams() {
     }))
 }
 
+export async function generateMetadata(
+    {params}: { params: Promise<{ slug: string }> },
+): Promise<Metadata> {
+    const {slug} = await params
+
+    const post = await client.fetch<Post>(POST_QUERY, {slug}, options);
+
+    return {
+        title: post.title,
+    }
+}
 
 export default async function PostPage({
                                            params,
@@ -39,8 +51,8 @@ export default async function PostPage({
         : null;
 
     return (
-        <main className="min-h-[80vh] py-12 md:py-16 lg:py-20 flex flex-col gap-4">
+        <section className="min-h-[80vh] py-12 md:py-16 lg:py-20 flex flex-col gap-4">
             <BlogDetails post={post} postImageUrl={postImageUrl}/>
-        </main>
+        </section>
     );
 }
