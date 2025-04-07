@@ -6,6 +6,11 @@ import BlogDetails from "@/components/BlogDetails";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
+const POSTS_QUERY = `*[
+  _type == "post"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]`;
+
 const {projectId, dataset} = client.config();
 const urlFor = (source: SanityImageSource) =>
     projectId && dataset
@@ -13,6 +18,15 @@ const urlFor = (source: SanityImageSource) =>
         : null;
 
 const options = {next: {revalidate: 30}};
+
+export async function generateStaticParams() {
+    const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, {next: {revalidate: 30}});
+
+    return posts.map((post: Post) => ({
+        slug: post.slug!.current,
+    }))
+}
+
 
 export default async function PostPage({
                                            params,

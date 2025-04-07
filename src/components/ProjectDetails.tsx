@@ -17,10 +17,6 @@ const urlFor = (source: SanityImageSource) =>
 
 
 function BlogDetails({project}: { project: Project }) {
-    // Request higher quality images from Sanity
-    const projectBgImageUrl = project.bgImage
-        ? urlFor(project.bgImage)?.width(800).height(450).quality(90).url()
-        : null;
     const projectMainImageUrl = project.mainImage
         ? urlFor(project.mainImage)?.width(448).height(448).quality(100).url()
         : null;
