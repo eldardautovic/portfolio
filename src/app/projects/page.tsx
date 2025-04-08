@@ -9,7 +9,7 @@ import {Metadata} from "next";
 const PROJECT_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(_createdAt desc)[0...12]{
+]|order(_createdAt asc)[0...12]{
   ...,
   "categories": categories[]-> {
     _type,
