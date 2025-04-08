@@ -93,7 +93,7 @@ function BlogDetails({project}: { project: Project }) {
                 </div>
             </div>
 
-            <div className="prose prose-invert prose-slate">
+            <div className="prose prose-invert prose-slate !max-w-none">
                 <div className="text-slate-200 py-2">
                     {Array.isArray(project.body) && <PortableText value={project.body}/>}
                 </div>

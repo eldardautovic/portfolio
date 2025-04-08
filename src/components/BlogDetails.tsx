@@ -27,7 +27,7 @@ function BlogDetails({post, postImageUrl}: { post: Post, postImageUrl: string | 
                 </div>
             )}
             <h1 className="text-4xl font-black mb-2 text-slate-100">{post.title}</h1>
-            <div className="prose prose-invert prose-slate">
+            <div className="prose prose-invert prose-slate !max-w-none">
                 <p className="text-sm text-slate-400 leading-7">Published: {new Date(post.publishedAt ?? '').toLocaleDateString()}</p>
                 <div className="text-slate-200 py-2">
                     {Array.isArray(post.body) && <PortableText value={post.body}/>}
