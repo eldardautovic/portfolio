@@ -29,7 +29,7 @@ function BlogDetails({project}: { project: Project }) {
                 ← Back to projects
             </Link>
             <div
-                className="w-full h-[45.5rem] md:h-[33.625rem] flex rounded-md flex-col md:flex-row justify-between p-5 items-center"
+                className="w-full h-[45.5rem] md:h-[33.625rem] flex rounded-md flex-col md:flex-row justify-between p-5 items-center gap-x-3"
                 style={{backgroundColor: project.bgColor?.hex ?? 'white'}}
             >
                 <div
