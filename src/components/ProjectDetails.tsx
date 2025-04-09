@@ -78,7 +78,8 @@ function BlogDetails({project}: { project: Project }) {
                     </div>
 
                     <Button asChild size="sm" className="w-fit">
-                        <Link href={project.repoUrl ?? ""} target="_blank">View repo</Link>
+                        <Link href={project.repoUrl ?? ""} target="_blank" aria-label="Check it out on GitHub">View
+                            repo</Link>
                     </Button>
 
                 </div>
