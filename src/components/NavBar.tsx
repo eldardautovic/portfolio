@@ -17,6 +17,7 @@ interface MenuItem {
     description?: string;
     icon?: React.ReactNode;
     items?: MenuItem[];
+    download?: boolean;
 }
 
 interface NavBarProps {
@@ -48,6 +49,11 @@ const NavBar = ({
                         {
                             title: "Blog",
                             url: "/blog",
+                        },
+                        {
+                            title: "Resume",
+                            url: "/Eldar_Dautovic_CV.pdf",
+                            download: true,
                         },
                     ],
                 }: NavBarProps) => {
@@ -132,6 +138,7 @@ const renderMenuItem = (item: MenuItem) => {
             <NavigationMenuLink
                 href={item.url}
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
+                {...(item.download ? {download: true} : {})}
             >
                 {item.title}
             </NavigationMenuLink>
@@ -156,7 +163,12 @@ const renderMobileMenuItem = (item: MenuItem) => {
     }
 
     return (
-        <Link key={item.title} href={item.url} className="text-md font-semibold">
+        <Link
+            key={item.title}
+            href={item.url}
+            className="text-md font-semibold"
+            {...(item.download ? {download: true} : {})}
+        >
             {item.title}
         </Link>
     );
@@ -167,6 +179,7 @@ const SubMenuLink = ({item}: { item: MenuItem }) => {
         <Link
             className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
             href={item.url}
+            {...(item.download ? {download: true} : {})}
         >
             <div className="text-foreground">{item.icon}</div>
             <div>
