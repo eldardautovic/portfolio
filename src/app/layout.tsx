@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "Eldar Dautović",
     description: "A portfolio to showcase my skills -- Eldar Dautović",
+    other: {"google-site-verification": "pzI7z7RzlfzmlOlyznpH9U7nPpodL6DbWnl58V6DsCc"}
 };
 
 export default function RootLayout({
